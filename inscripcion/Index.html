@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>LAB4 JS</title>
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <div class="logo-area">
+                <h1>Inscripción a cursos</h1>
+                <p>Completa el formulario para inscribirte</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="titulo-seccion">Formulario de inscripción</h2>
+
+        <form id="inscripcion" class="card" novalidate>
+            <div class="campo">
+                <label for="nombre">Nombre completo</label>
+                <input id="nombre" name="nombre" autocomplete="name"
+                       aria-describedby="nombre-error">
+                <p id="nombre-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+                <label for="cedula">Cédula</label>
+                <input id="cedula" name="cedula" placeholder="8-123-4567"
+                       aria-describedby="cedula-error">
+                <p id="cedula-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+                <label for="correo">Correo</label>
+                <input id="correo" name="correo" type="email" autocomplete="email"
+                       aria-describedby="correo-error">
+                <p id="correo-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+                <label for="celular">Celular</label>
+                <input id="celular" name="celular" type="tel" placeholder="6123-4567"
+                       autocomplete="tel" aria-describedby="celular-error">
+                <p id="celular-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+                <label for="nacimiento">Fecha de nacimiento</label>
+                <input id="nacimiento" name="nacimiento" type="date"
+                       aria-describedby="nacimiento-error">
+                <p id="nacimiento-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+                <label for="curso">Curso</label>
+                <select id="curso" name="curso" aria-describedby="curso-error">
+                    <option value="">Selecciona un curso</option>
+                    <option>Desarrollo Web</option>
+                    <option>Bases de Datos</option>
+                    <option>Programación en Java</option>
+                    <option>Redes de Computadoras</option>
+                </select>
+                <p id="curso-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <fieldset>
+                <legend>Modalidad</legend>
+                <label class="opcion"><input type="radio" name="modalidad" value="presencial"
+                       aria-describedby="modalidad-error"> Presencial</label>
+                <label class="opcion"><input type="radio" name="modalidad" value="virtual"
+                       aria-describedby="modalidad-error"> Virtual</label>
+                <p id="modalidad-error" class="error" aria-live="polite"></p>
+            </fieldset>
+
+            <div class="campo" id="campo-sede" hidden>
+                <label for="sede">Sede</label>
+                <select id="sede" name="sede" aria-describedby="sede-error">
+                    <option value="">Selecciona una sede</option>
+                    <option>Ciudad de Panamá</option>
+                    <option>David</option>
+                    <option>Santiago</option>
+                </select>
+                <p id="sede-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+                <label for="clave">Contraseña</label>
+                <input id="clave" name="clave" type="password" autocomplete="new-password"
+                       aria-describedby="clave-error clave-fuerza">
+                <div id="clave-fuerza" class="fuerza" data-nivel="vacia">
+                    <div class="fuerza-barra"><span></span></div>
+                    <small class="fuerza-texto">Fuerza: —</small>
+                </div>
+                <p id="clave-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+                <label for="clave2">Confirmar contraseña</label>
+                <input id="clave2" name="clave2" type="password" autocomplete="new-password"
+                       aria-describedby="clave2-error">
+                <p id="clave2-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+                <label for="comentarios">Comentarios (opcional)</label>
+                <textarea id="comentarios" name="comentarios"
+                          aria-describedby="comentarios-contador comentarios-error"></textarea>
+                <p id="comentarios-contador" class="contador">0/200</p>
+                <p id="comentarios-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <div class="campo">
+                <label class="opcion">
+                    <input type="checkbox" name="terminos" id="terminos"
+                           aria-describedby="terminos-error"> Acepto los términos y condiciones
+                </label>
+                <p id="terminos-error" class="error" aria-live="polite"></p>
+            </div>
+
+            <button type="submit" class="btn btn-principal">Inscribirme</button>
+        </form>
+
+        <section id="confirmacion" aria-live="polite"></section>
+    </main>
+    <script src="validacion.js" defer></script>
+</body>
+</html>
